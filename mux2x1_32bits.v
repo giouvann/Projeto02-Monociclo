@@ -4,7 +4,7 @@
 // DISCIPLINA: Arquitetura e Organização de Computadores
 // SEMESTRE: 2026.1
 // ARQUIVO: Multiplexador de 2 para 1 com 5 bits (mux2x1_5bits)
-// DESCRIÇÃO:           
+// DESCRIÇÃO: Implementa um multiplexador 2 para 1 de 32 bits. O sinal de seleção S determina qual das entradas (A ou B) será encaminhada para a saída Y.
 ////////////////////////////////////////////////////////////////////////////////////
 
 module mux2x1_5bits(
