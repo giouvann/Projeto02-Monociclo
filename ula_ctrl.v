@@ -4,7 +4,7 @@
 // DISCIPLINA: Arquitetura e Organização de Computadores
 // SEMESTRE: 2026.1
 // ARQUIVO: Unidade de Controle da ULA (ula_ctrl)
-// DESCRIÇÃO:           
+// DESCRIÇÃO: Decodifica o sinal ALUOp e os campos da instrução para gerar o código de 4 bits, definindo qual operação a ULA deve executar.
 ////////////////////////////////////////////////////////////////////////////////////
 
 module ula_ctrl (
