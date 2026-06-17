@@ -6,7 +6,9 @@
 // ARQUIVO: Módulo top-level do processador MIPS monociclo.
 // DESCRIÇÃO: Integra todos os módulos: PC, i_mem, regfile, ULA, ula_ctrl,
 //            ctrl e d_mem. Implementa os multiplexadores e conexões
-//            necessárias para executar as instruções do subconjunto              
+//            necessárias para executar as instruções do subconjunto,
+//            incluindo desvios incondicionais (j, jal) e jump por
+//            registrador (jr).
 ////////////////////////////////////////////////////////////////////////////////////
 
 module top_level (
