@@ -9,10 +9,14 @@
 
 module exten_sinal(
 	input  [15:0]A,		            // barramento de entrada de 16 bits
+   input  zero_ext,
 	output [31:0]Y		               // barramento de saída de 32 bits
 );
-   assign Y = (A[15] == 0) ?	      // verifica o bit de sinal da entrada 
+   assign Y = (zero_ext == 1'b1) ?	// verifica o bit de sinal da entrada 
    {16'b0000000000000000, A}	      // para números positivos, replica 0 nos 16 bits mais significativos
    :
-   {16'b1111111111111111, A};	      // para números negativos, replica 1 nos 16 bits mais significativos
+   ((A[15] == 0) ?
+   {16'b0000000000000000, A}        // sign-extend positivos
+   :
+   {16'b1111111111111111, A});      // para números negativos, replica 1 nos 16 bits mais significativos
 endmodule
