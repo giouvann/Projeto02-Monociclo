@@ -5,7 +5,7 @@
 // SEMESTRE: 2026.1
 // ARQUIVO: Memória de Instruções ROM (i_mem.v)
 // DESCRIÇÃO: Memória de instrução (ROM) assíncrona com tamanho parametrizável.
-//            Carrega instruções a partir do arquivo "instruction.list" em
+//            Carrega instruções a partir do arquivo "instructions.list" em
 //            formato binário, uma instrução de 32 bits por linha.
 ////////////////////////////////////////////////////////////////////////////////////
 
@@ -19,10 +19,10 @@ module i_mem #(
     // Memória ROM: MEM_SIZE palavras de 32 bits
     reg [31:0] mem [0:MEM_SIZE-1];
  
-    // Inicializa a memória a partir do arquivo externo "instruction.list"
+    // Inicializa a memória a partir do arquivo externo "instructions.list" (fornecido pelo professor)
     // Cada linha do arquivo contém uma instrução em binário (32 bits)
     initial begin
-        $readmemb("instruction.list", mem);
+        $readmemb("instructions.list", mem);
     end
  
     // Leitura assíncrona: endereço dividido por 4 (word-addressed)

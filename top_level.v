@@ -107,9 +107,14 @@ module top_level (
 
     // Extensor de sinal do imediato
     wire [31:0] imm_ext;
+    // Determina se deve fazer zero-extension (ORI, ANDI, XORI)
+    wire zero_ext = (opcode == 6'b001101) ||  // ORI
+                    (opcode == 6'b001100) ||  // ANDI
+                    (opcode == 6'b001110);    // XORI
 
     exten_sinal EXT (
         .A (imm16),
+        .zero_ext (zero_ext),
         .Y (imm_ext)
     );
 
